@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Fixed Background Template</title>
+
+        <style>
+            .fixed-background {
+                background-image: url("https://eddiebaum.github.io/photos/miamiBeach.JPG");
+                background-repeat: no-repeat;
+                background-size: cover;
+                background-position: center;
+                position: fixed;
+                top: 0;
+                left: 0;
+                width: 100%;
+                height: 100%;
+                z-index: -1; /* make sure the background is behind other elements */
+            }
+
+            .scrollable-content {
+                position: relative;
+                z-index: 1; /* make sure the content is in front of the background */
+                overflow-y: scroll; /* add scrollbar if content exceeds the div height */
+                height: 100%; /* option to restrict the height to the viewport */
+            }
+
+            .divBox {
+                height: 100%;
+                width: 100%;
+
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                align-items: center;
+                flex: 1;
+
+                background:rgba(0, 0, 0, 0.6);
+                border: 5px solid black;
+                font-size: 5em;
+                color: white;
+            }
+
+
+
+        </style>
+    </head>
+    <body>
+        <div class="fixed-background"> <!-- this Div background stays in fixed position -->
+            <div class="scrollable-content">
+                <!-- your scrollable content goes here -->
+                <div class="divBox" id="divOne">Div One</div>
+                <div class="divBox" id="divTwo">Div Two</div>
+                <div class="divBox" id="divThree">Div Three</div>
+
+                </div>
+
+            </div>
+        </div>
+
+    </body>
+</html>
